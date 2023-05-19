@@ -4,7 +4,7 @@ services:
                 image: flask_opps_v1
                 build: .
                 ports:
-                        - "8342:8342"
+                        - "8189:8189"
                 volumes:
                         - ./volumes:/volumes
                         - ./instance:/instance
