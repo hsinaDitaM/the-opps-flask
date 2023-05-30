@@ -1,0 +1,69 @@
+{% extends "fragments/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block body_classes %}dark-mode{% endblock %}
+
+{% block content %}
+<main class="page-container">
+    <div id="message-box">
+    </div>
+
+    <nav id="bar">
+        <div class="title">
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='images/%s.png') % (user[0]) }}" alt="">
+            <h2>{{ user[2] }}</h2>
+            <h3>{{ user[4] }}</h3>
+        </div>
+        <div id="navigation" class="navigation">
+            <ul>
+                <li class="nav-class">
+                    <ul class="section">
+                        <li class="nav-items">
+                            <a href="/dashboard"><span class="material-symbols-outlined icon-font">home</span>Dashboard</a>
+                        </li>
+                    </ul>
+                </li>
+                {% if user[4] == 'admin' %}
+                <li class="nav-class">Manage</li>
+                <li class="nav-class">
+                    <ul class="section">
+                        <li class="nav-items">
+                            <a href="/dashboard/users"><span class="material-symbols-outlined icon-font">group</span>Users</a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                <li class="nav-class">Settings</li>
+                <li class="nav-class">
+                    <ul class="section">
+                        <li class="nav-items">
+                            <a id="logout-button" href="#"><span class="material-symbols-outlined icon-font">logout</span>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-wrapper">
+        <div class="page">
+            {% block page %}
+            {% endblock %}
+
+            {% block page_scripts %}
+            {% endblock %}
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/boardcastMessage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

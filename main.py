@@ -56,3 +56,24 @@ if __name__ == "__main__":
     from flask_cors import CORS
     cors = CORS(app)
     app.run(debug=True, host="0.0.0.0", port="8086")
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model.players import NFLPlayer
+
+# Create the database engine
+engine = create_engine('sqlite:///nfl_players.db', echo=True)
+
+# Create a session to interact with the database
+Session = sessionmaker(bind=engine)
+session = Session()
+
+# Retrieve all NFL player records from the table
+players = session.query(NFLPlayer).all()
+=
+# Print the player details
+for player in players:
+    print(f"Name: {player.name}, Age: {player.age}, DOB: {player.dob}")
+
+# Close the session
+session.close()

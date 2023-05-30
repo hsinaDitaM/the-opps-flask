@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v21/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');
+}
+
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: 300;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+body ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+body :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+
+body ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  opacity: 1;
+  font-weight: 300;
+}
+
+body :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+.wrapper {
+  /* background: #50a3a2; */
+  /* background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); */
+  background: var(--background-color);
+  background: linear-gradient(to top left, var(--background-color) 0%, var(--background-color-darker) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper.form-success .container h1 {
+  transform: translateY(85px);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 400px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.container h1 {
+  font-size: 40px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-put;
+  font-weight: 200;
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+}
+
+form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid var(--background-color-darker);
+  background-color: var(--background-color);
+  opacity: 0.7;
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-color);
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: var(--text-color);
+}
+
+form button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background-color: var(--background-color-darker);
+  border: 0;
+  padding: 10px 15px;
+  color: var(--text-color);
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+
+form button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color-darker)
+}
+
+#sea-of-balls {
+  position: absolute;
+  bottom: -160px;
+  width: 100vw;
+  height: 160px;
+
+  filter: brightness(1) contrast(100);
+  background: #fff;
+  z-index: 1;
+}
+
+#sea-of-balls span {
+  position: absolute;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  background-color: rgba(255, 255, 255, 0.15);
+  bottom: calc(160px - var(--size));
+  animation: square-transformation var(--speed) infinite ease-in-out;
+  animation-delay: var(--delay);
+  filter: blur(10px);
+  z-index: inherit;
+}
+
+@keyframes square-transformation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100vh - var(--size) - 20px)) rotate(360deg);
+  }
+
+}

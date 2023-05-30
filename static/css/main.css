@@ -1,0 +1,14 @@
+* {box-sizing: border-box;}
+
+.dark-mode {
+    /* https://gist.github.com/MrGrigri/9b11ab71117a30a7ecfc85055f203be2 */
+	--accent-color: #399A83;
+	--text-color: #c2cad9;
+	--background-color: #1B2537;
+	--background-color-darker: #141A28;
+
+	--red: #F36A55;
+	--red-lighter: #a00;
+	--blue: #2C326F;
+	--grey: #545B69;
+}

@@ -1,0 +1,42 @@
+{% extends "fragments/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_classes%}dark-mode{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div id="message-box"></div>
+    <div class="wrapper">
+        <div id="login" class="container">
+            <h1>Welcome</h1>
+            <form id="login-form" class="form">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <p>Don't have an account? <a id="switch-to-register" href="#">Register</a></p>
+                <button type="submit" id="login-button">Login</button>
+            </form>
+        </div>
+
+        <div id="register" class="container" style="display: none;">
+            <h1>Register</h1>
+            <form id="register-form" class="form">
+                <input type="text" placeholder="Email" name="email">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <p>Already have an account? <a id="switch-to-login" href="#">Login</a></p>
+                <button type="submit" id="register-button">Create account</button>
+            </form>
+        </div>
+    </div>
+    <div id="sea-of-balls"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/boardcastMessage.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/balls.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,100 @@
+body, html {margin: 0; padding: 0;}
+* {box-sizing: border-box;}
+
+.page-container {
+    height: 100vh;
+    display: flex;
+}
+
+#bar {
+    position: absolute;
+    display: block;
+    width: clamp(300px, 20vw, 400px);
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+.page-wrapper {
+    margin-left: clamp(300px, 20vw, 400px);
+    width: 100%;
+}
+
+.page {
+    padding: 2rem 4rem;
+    background-color: var(--background-color-darker);
+    color: var(--text-color);
+    width: 100%;
+    height: 100%;
+}
+
+#navigation {
+    margin-top: 2rem;
+}
+
+#navigation ul {
+    padding: 0;
+}
+
+#navigation .nav-class {
+    color: var(--grey);
+}
+
+#navigation .section {
+    margin: 1rem 2rem;
+}
+
+#navigation li {
+    list-style: none;
+    color: var(--text-color);
+}
+
+#navigation li .icon-font {
+    position: relative;
+    transform: translate(-4px, 4px);
+}
+
+#navigation li a {
+    appearance: none;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* generics */
+h1 {
+    color: var(--accent-color);
+}
+
+button {
+    appearance: none;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--background-color-darker);
+}
+
+input {
+    appearance: none;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 1rem;
+    border: none;
+    outline: none;
+}
+
+th {
+    width: auto;
+}
+
+.title {
+    color: var(--text-color);
+    width: auto;
+}

@@ -1,0 +1,25 @@
+{% extends "fragments/dashboard.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block page %}
+    <header>
+        <h1>Dashboard</h1>
+        <h2>{{ user[2] }}</p>
+    </header>
+    <main>
+        <section class="item-container">
+            <h1>Profile</h1>
+            <ul>
+                <li>ID: {{ user[0] }}</li>
+                <li>Email: {{ user[1] }}</li>
+                <li>Username: {{ user[2] }}</li>
+                <li>Password: {{ user[3] }}</li>
+                <li>Role: {{ user[4] }}</li>
+            </ul>
+        </section>
+    </main>
+{% endblock %}

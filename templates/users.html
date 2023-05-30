@@ -1,0 +1,18 @@
+{% extends "fragments/dashboard.html" %}
+
+{% block page %}
+    <h1>Manage users</h1>
+    <table id="users-table">
+        <tr>
+            <th><p class="title">ID</p></th>
+            <th><p class="title">Email</p></th>
+            <th><p class="title">Username</p></th>
+            <th><p class="title">Password</p></th>
+            <th><p class="title">Role</p></th>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="{{ url_for('static', filename='js/users.js') }}"></script>
+{% endblock %}

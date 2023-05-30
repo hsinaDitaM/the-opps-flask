@@ -1,0 +1,6 @@
+.item-container {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 25px;
+    width: fit-content;
+}
